@@ -1,10 +1,10 @@
-# FCS Releases
+# FCS Drivers
 
-FluentControl 配套固件与网关的公开发行入口。仓库仅保留本说明；固件、安装包、恢复包、补丁及校验文件全部作为 Release 附件发布，开发源码继续私有。
+FluentControl 配套驱动、固件与网关的公开下载入口。仓库仅保留本说明；固件、安装包、恢复包、补丁及校验文件全部作为 Release 附件发布，开发源码继续私有。
 
-Public firmware and gateway distribution for FluentControl. This repository keeps only this README; firmware, installers, recovery packages, patches and checksums are Release assets. Development sources remain private.
+Public driver, firmware and gateway downloads for FluentControl. This repository keeps only this README; firmware, installers, recovery packages, patches and checksums are Release assets. Development sources remain private.
 
-[发行列表 / Releases](https://github.com/chuanjianghe1024-cmd/FCS-Releases/releases) · [FC](https://github.com/chuanjianghe1024-cmd/FluentControl) · [硬件模型 / Hardware models](https://github.com/chuanjianghe1024-cmd/fc-sensor-models)
+[发行列表 / Releases](https://github.com/chuanjianghe1024-cmd/FCS-Drivers/releases) · [FC](https://github.com/chuanjianghe1024-cmd/FluentControl) · [硬件模型 / Hardware models](https://github.com/chuanjianghe1024-cmd/fc-sensor-models)
 
 **当前仅完成发行仓库初始化，尚无可下载的正式固件。下列版本及文件名均为规则示例，不代表已经发布。**
 
