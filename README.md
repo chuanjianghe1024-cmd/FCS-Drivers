@@ -123,13 +123,12 @@ Upload only reviewed release artifacts and `SHA256SUMS.txt`, not source archives
 
 For multiple products, do not interpret the repository-wide Latest as the latest version of every product; select stable releases by product tag prefix. Never rewrite published tags or assets; publish a new version. Public download does not itself grant commercial-use rights; consult the terms shipped with each release.
 
-
 ## 使用许可 / Usage license
 
-本项目原创内容采用 [个人非商业使用许可 1.0](LICENSE)，仅供自然人个人非商业自用，可学习、修改和自制；不允许商业项目集成、企业业务或客户用途、收费服务，以及软件、固件、模型或打印成品销售。独立再分发也不获授权；向官方贡献的有限 fork/PR 例外见许可。其他用途须取得相关权利人书面授权。第三方及历史授权保持有效；这是源码/设计公开的受限许可，不是 OSI 开源许可。
+当前采用 [PolyForm Noncommercial 1.0.0](LICENSE)，允许许可定义范围内的非商业使用、修改和分发，包括条款列明的教育、科研、慈善等机构用途；不限于个人自用。不授予一般商业用途，其他用途需相关权利人另行授权。分发须遵守许可及声明保留要求。第三方内容和此前合法取得的授权保持有效。这是源码/设计可见的非商业许可，不是 OSI 开源许可；摘要不增加或替代 LICENSE 的条款。
 
-Original project material uses the [Personal Noncommercial Use License 1.0](LICENSE), solely for an individual's own noncommercial use, study, modification and DIY fabrication. Commercial integration, business/customer use, paid services and sales of software, firmware, models or printed products are not permitted. Independent redistribution is not granted; see the limited upstream fork/PR contribution exception. Other uses require written permission from the relevant rightsholders. Third-party and earlier grants remain effective. This is a restricted source/design-available license, not an OSI open-source license.
+The current license is [PolyForm Noncommercial 1.0.0](LICENSE). It permits noncommercial use, modification and distribution as defined by the license, including the listed educational, research and charitable organization uses; it is not limited to personal use. General commercial use is not granted; other uses require separate permission from the relevant rightsholders. Follow the license and notice requirements when distributing. Third-party terms and previously lawfully obtained grants remain effective. This is a source/design-available noncommercial license, not an OSI open-source license; this summary does not add to or replace LICENSE.
 
-后续发行的官方原创产物必须有权按此许可分发，并随包附 LICENSE.txt、第三方许可/声明；中英发行说明及 manifest.json 标明 LicenseRef-Personal-Noncommercial-1.0 和适用范围。第三方组件沿用原许可；不得将旧 MIT / PolyForm 构建简单改名后声称新限制已生效。私有源码库的许可须在对应构建源中核对，公开仓库说明不会自动重授权它们。当前没有 Release，本次未创建发行附件。
+后续官方发行包须有权按所声明条款分发，附 LICENSE.txt 和第三方许可/声明；中英发行说明与 manifest.json 使用 PolyForm-Noncommercial-1.0.0 并注明适用范围。核对私有构建来源的实际许可；公开 README 不自动重授权私有源码或第三方组件。历史包沿用各自条款，不改写既有附件。本次不创建 Release。
 
-Future original official artifacts must be eligible for distribution under these terms and include LICENSE.txt and third-party licenses/notices. Bilingual release notes and manifest.json must identify LicenseRef-Personal-Noncommercial-1.0 and its scope. Third-party terms remain unchanged. Do not relabel old MIT / PolyForm builds as newly restricted. Verify the license in the private build source; this public README does not automatically relicense it. There are currently no releases; this change creates no release assets.
+Future official artifacts must be eligible for distribution under the stated terms and include LICENSE.txt and third-party licenses/notices. Bilingual release notes and manifest.json use PolyForm-Noncommercial-1.0.0 and state scope. Verify the actual private build-source license; this README does not automatically relicense private sources or third-party components. Historical packages retain their terms and assets remain unchanged. This change creates no release.
