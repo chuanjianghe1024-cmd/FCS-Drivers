@@ -1,4 +1,4 @@
-# FCS Drivers
+# FCS Drivers · FCSD
 
 FluentControl 配套驱动、固件与网关的公开下载入口。仓库仅保留本说明；固件、安装包、恢复包、补丁及校验文件全部作为 Release 附件发布，开发源码继续私有。
 
@@ -9,6 +9,50 @@ Public driver, firmware and gateway downloads for FluentControl. This repository
 **当前仅完成发行仓库初始化，尚无可下载的正式固件。下列版本及文件名均为规则示例，不代表已经发布。**
 
 **The distribution repository is initialized; no production firmware is available yet. Versions and filenames below are naming examples, not published releases.**
+
+## 自制与验证
+
+自制流程由三个公开入口组成，无需访问私有开发仓库：
+
+| 入口 | 下载内容 | 用途 |
+| --- | --- | --- |
+| [FC · FluentControl](https://github.com/chuanjianghe1024-cmd/FluentControl/releases) | Windows 桌面端 Setup / MSI | 查看光照、配置设备与显示器自动调节 |
+| [FCM · 硬件模型](https://github.com/chuanjianghe1024-cmd/fc-sensor-models) | 模型项目内的 STL / STEP / 3MF、装配说明 | 打印外壳、试装与组装 |
+| [FCSD · FCS Drivers](https://github.com/chuanjianghe1024-cmd/FCS-Drivers/releases) | 对应产品的固件、恢复包，以及按需使用的 Gateway | 安装设备程序、接入和恢复 |
+
+FCM 对应 `fc-sensor-models`，FCSD 对应 `FCS-Drivers`；这些简称不改变仓库地址。这里的“驱动”包含烧录到传感器上的固件；Gateway 是运行在电脑上的接入组件，两者不是同一个安装包。各自版本独立，以发行说明中的兼容范围配套选择。
+
+1. **选型并下载**：先确认 FCSD 存在适配板型与传感器的完整固件包，再选 FCM 对应模型版本。当前新自制方案面向 ESP32-C3 SuperMini + BH1750/GY-302；不要仅凭“C3”名称判断兼容。
+2. **焊接与初检**：依照该硬件项目已经核实的公开接线/装配说明操作，检查供电、焊点、短路和绝缘。接线说明随硬件资料维护，Release 不重复列接线表；缺少已核实说明时不要猜 GPIO。
+3. **安装固件**：从 FCSD Release 的 Assets 获取完整包，核对校验文件，按随包说明首次安装并验证设备身份。若该版本要求 Thonny / MicroPython，使用它指定的板型、基础固件和版本；不要把任意 ESP32-C3 当作已确认的 FCS 设备执行恢复。
+4. **打印与装配**：从 FCM 模型目录的 `print/` 取文件，先试打一套并干装，检查 USB、感光孔和焊线空间；先验证读数，再最终固定。通用 3MF 不等于已配置的生产摆盘。
+5. **接入 FC**：安装发行说明列为兼容的 FC 版本，连接设备并选择光照来源。Gateway 仅在接入路径需要且未提供兼容版本时单独下载；FC 安装包若已包含兼容 Gateway，就无需重复安装。独立使用或其他平台以 FCSD 实际提供的附件和说明为准。
+6. **验证后启用**：先保持自动调节关闭，确认设备身份、光照读数随遮挡/照明变化、断开后显示离线、重连后恢复；再确认显示器可手动调光，显式开启自动亮度并检查上下限、HDR 限制和手动接管。记录 FC、固件、Gateway（如用）、模型版本及测试结果。
+
+**当前状态：FCSD 尚无已发布附件，因此上述完整下载自制流程尚未开放。** FC 的已发布版本、开发分支功能和未来固件包不能视为同一套已验证组合；公开的完整接线/首次安装资料、首个固件及按需 Gateway 包、实机联调仍需补齐。L7 外壳实物配合及生产摆盘也仍待验证。下载 GitHub 自动生成的 Source code ZIP 不能代替固件包。
+
+
+## DIY assembly and validation
+
+The DIY workflow uses three public entry points; access to the private development repository is not required:
+
+| Entry | Downloads | Purpose |
+| --- | --- | --- |
+| [FC · FluentControl](https://github.com/chuanjianghe1024-cmd/FluentControl/releases) | Windows desktop Setup / MSI | View light readings, configure devices and automate monitor controls |
+| [FCM · Hardware models](https://github.com/chuanjianghe1024-cmd/fc-sensor-models) | Project STL / STEP / 3MF files and assembly guides | Print, trial-fit and assemble the enclosure |
+| [FCSD · FCS Drivers](https://github.com/chuanjianghe1024-cmd/FCS-Drivers/releases) | Product firmware, recovery packages and Gateway when needed | Install device software, connect and recover devices |
+
+FCM refers to `fc-sensor-models`; FCSD refers to `FCS-Drivers`. These abbreviations do not rename the repositories. “Drivers” includes firmware installed on the sensor; Gateway runs on the computer and is a separate component. Products version independently; select a compatible combination using the release notes.
+
+1. **Choose and download**: first confirm that FCSD has a complete firmware package for your board and sensor, then select the matching FCM model revision. New DIY builds target ESP32-C3 SuperMini + BH1750/GY-302. The “C3” name alone does not establish compatibility.
+2. **Solder and inspect**: follow verified public wiring/assembly instructions for that hardware project; check power, joints, shorts and insulation. Wiring belongs in hardware documentation and is not repeated in Release tables. Do not guess GPIO assignments when verified instructions are missing.
+3. **Install firmware**: download the complete package from FCSD Release Assets, verify its checksums and follow its first-install instructions, including device identity verification. If it requires Thonny / MicroPython, use the specified board, base firmware and version. Do not run FCS recovery on an arbitrary ESP32-C3.
+4. **Print and assemble**: use the FCM project's `print/` files. Trial-print one set and dry-fit it, checking USB access, the light aperture and wire clearance. Verify readings before final bonding. Generic 3MF files are not configured production plates.
+5. **Connect to FC**: install a compatible FC version identified in the release notes, connect the device and select its light source. Download Gateway separately only when your connection path requires it and a compatible copy is not already provided. An FC installer that bundles a compatible Gateway needs no duplicate installation. Standalone or other-platform use depends on actual FCSD assets and instructions.
+6. **Validate, then enable**: leave automation off initially. Verify device identity, readings that respond to light/shade, offline status after disconnect and recovery after reconnect. Confirm manual monitor brightness control before explicitly enabling automation; check limits, HDR restrictions and manual override. Record the FC, firmware, Gateway (if used) and model versions with test results.
+
+**Current status: FCSD has no published assets, so the complete download-and-build workflow is not available yet.** Released FC versions, development-branch features and future firmware packages are not a single validated combination. Complete public wiring/first-install instructions, initial firmware and any required Gateway packages, and physical end-to-end validation remain pending. L7 physical fit and production plates also need validation. GitHub's generated Source code ZIP is not a firmware package.
+
 
 ## 短名称 / Short names
 
