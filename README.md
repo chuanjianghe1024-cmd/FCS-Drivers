@@ -1,8 +1,8 @@
 # FCS Drivers · FCSD
 
-FluentControl 配套驱动、固件与网关的公开下载入口。仓库仅保留本说明；固件、安装包、恢复包、补丁及校验文件全部作为 Release 附件发布，开发源码继续私有。
+FluentControl 配套驱动、固件与网关的公开下载入口。仓库保留本说明和 LICENSE；固件、安装包、恢复包、补丁及校验文件全部作为 Release 附件发布，开发源码继续私有。
 
-Public driver, firmware and gateway downloads for FluentControl. This repository keeps only this README; firmware, installers, recovery packages, patches and checksums are Release assets. Development sources remain private.
+Public driver, firmware and gateway downloads for FluentControl. This repository keeps this README and LICENSE; firmware, installers, recovery packages, patches and checksums are Release assets. Development sources remain private.
 
 [发行列表 / Releases](https://github.com/chuanjianghe1024-cmd/FCS-Drivers/releases) · [FC](https://github.com/chuanjianghe1024-cmd/FluentControl) · [硬件模型 / Hardware models](https://github.com/chuanjianghe1024-cmd/fc-sensor-models)
 
@@ -115,10 +115,21 @@ Use bilingual Release notes with the following information, and repeat compatibi
 | 来源与完整性 / Provenance | 私有构建的可追溯编号、产物版本、SHA-256 / Traceable private build identifier, artifact version and SHA-256 |
 | 使用条款 / Terms | 该产物的许可证或分发条款 / Artifact-specific license or distribution terms |
 
-只上传审核过的发行产物和 `SHA256SUMS.txt`，不上传源码归档、凭据、个人配置或内部日志。发行仓库的 tag 只标记公开发布记录，真实构建来源单独追踪；GitHub 自动生成的 Source code ZIP/TAR 只包含本说明，不是固件。发布包若包含 .py，它本身就是可见代码，必须在发布前确认范围。
+只上传审核过的发行产物和 `SHA256SUMS.txt`，不上传源码归档、凭据、个人配置或内部日志。发行仓库的 tag 只标记公开发布记录，真实构建来源单独追踪；GitHub 自动生成的 Source code ZIP/TAR 只包含仓库说明和许可等文件，不是固件。发布包若包含 .py，它本身就是可见代码，必须在发布前确认范围。
 
-Upload only reviewed release artifacts and `SHA256SUMS.txt`, not source archives, credentials, personal configuration or internal logs. Tags in this distribution repository identify public release records; track the actual build source separately. GitHub's automatically generated Source code ZIP/TAR contains this README, not firmware. Any .py files included in a package are visible code and must be reviewed for publication.
+Upload only reviewed release artifacts and `SHA256SUMS.txt`, not source archives, credentials, personal configuration or internal logs. Tags in this distribution repository identify public release records; track the actual build source separately. GitHub's automatically generated Source code ZIP/TAR contains repository documentation and license files, not firmware. Any .py files included in a package are visible code and must be reviewed for publication.
 
 多产品共享本仓库时不要把全局 Latest 当成每个产品的最新版；按产品 tag 前缀查找对应稳定版。已发布标签和附件不可改写；更新使用新版本。公开下载不自动授予商业使用权，以每版实际附带条款为准。
 
 For multiple products, do not interpret the repository-wide Latest as the latest version of every product; select stable releases by product tag prefix. Never rewrite published tags or assets; publish a new version. Public download does not itself grant commercial-use rights; consult the terms shipped with each release.
+
+
+## 使用许可 / Usage license
+
+本项目原创内容采用 [个人非商业使用许可 1.0](LICENSE)，仅供自然人个人非商业自用，可学习、修改和自制；不允许商业项目集成、企业业务或客户用途、收费服务，以及软件、固件、模型或打印成品销售。独立再分发也不获授权；向官方贡献的有限 fork/PR 例外见许可。其他用途须取得相关权利人书面授权。第三方及历史授权保持有效；这是源码/设计公开的受限许可，不是 OSI 开源许可。
+
+Original project material uses the [Personal Noncommercial Use License 1.0](LICENSE), solely for an individual's own noncommercial use, study, modification and DIY fabrication. Commercial integration, business/customer use, paid services and sales of software, firmware, models or printed products are not permitted. Independent redistribution is not granted; see the limited upstream fork/PR contribution exception. Other uses require written permission from the relevant rightsholders. Third-party and earlier grants remain effective. This is a restricted source/design-available license, not an OSI open-source license.
+
+后续发行的官方原创产物必须有权按此许可分发，并随包附 LICENSE.txt、第三方许可/声明；中英发行说明及 manifest.json 标明 LicenseRef-Personal-Noncommercial-1.0 和适用范围。第三方组件沿用原许可；不得将旧 MIT / PolyForm 构建简单改名后声称新限制已生效。私有源码库的许可须在对应构建源中核对，公开仓库说明不会自动重授权它们。当前没有 Release，本次未创建发行附件。
+
+Future original official artifacts must be eligible for distribution under these terms and include LICENSE.txt and third-party licenses/notices. Bilingual release notes and manifest.json must identify LicenseRef-Personal-Noncommercial-1.0 and its scope. Third-party terms remain unchanged. Do not relabel old MIT / PolyForm builds as newly restricted. Verify the license in the private build source; this public README does not automatically relicense it. There are currently no releases; this change creates no release assets.
