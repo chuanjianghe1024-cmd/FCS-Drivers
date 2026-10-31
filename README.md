@@ -21,9 +21,9 @@ Name products by function, form or a stable characteristic. Do not concatenate M
 | **Lux** (`lux`) | 当前环境光传感器固件 / Current ambient-light sensor firmware | `lux-v0.1.0.zip` |
 | **Gateway** (`gateway`) | 独立网关发行系列 / Standalone gateway distribution family | `gateway-v0.1.0-win-x64.zip` |
 
-Lux 当前目标是 ESP32-C3 SuperMini + BH1750/GY-302；这只是产品目标，不代表完整固件已完成实机验收。具体板型、闪存、固件基础版本和接线由对应 Release 与包内清单明确限定，不凭名称推断兼容。
+Lux 当前目标是 ESP32-C3 SuperMini + BH1750/GY-302；这只是产品目标，不代表完整固件已完成实机验收。具体板型、闪存和固件基础版本由对应 Release 与包内清单明确限定，不凭名称推断兼容。
 
-Lux currently targets ESP32-C3 SuperMini + BH1750/GY-302. This identifies the target, not completed hardware acceptance. Each Release and package manifest must specify exact board revisions, flash requirements, runtime/base firmware and wiring; the name alone does not establish compatibility.
+Lux currently targets ESP32-C3 SuperMini + BH1750/GY-302. This identifies the target, not completed hardware acceptance. Each Release and package manifest must specify exact board revisions, flash requirements and runtime/base firmware; the name alone does not establish compatibility.
 
 ## 版本与附件 / Versions and assets
 
@@ -53,6 +53,10 @@ Lux currently targets ESP32-C3 SuperMini + BH1750/GY-302. This identifies the ta
 
 ## 每版简介与清单 / Release notes and manifest
 
+接线在硬件定型时确定，发行说明与包内清单不重复记录；相关资料由开发或装配文档维护。
+
+Wiring is fixed when the hardware design is finalized and is not repeated in Release notes or package manifests; development or assembly documentation maintains those details.
+
 每个 Release 用中英双语简介，写清以下信息；包内 `manifest.json` 保留相同兼容数据供工具读取。不要在仓库根目录另存每版文件。单个裸固件无法内含清单时，作为同版附件提供产品专属清单。
 
 Use bilingual Release notes with the following information, and repeat compatibility data in a package-level `manifest.json` for tooling. Do not keep per-version files in the repository tree. For a bare firmware image, provide a product-specific manifest as a sibling Release asset.
@@ -61,7 +65,6 @@ Use bilingual Release notes with the following information, and repeat compatibi
 |---|---|
 | 功能 / Function | 用途、实际支持功能 / Purpose and implemented capabilities |
 | 硬件 / Hardware | 主控、精确板型/硬件修订、传感器、闪存要求 / MCU, exact board/revision, sensors, flash requirements |
-| 接线 / Wiring | GPIO、供电、丝印对照及方向 / GPIOs, power, silkscreen mapping and orientation |
 | 依赖与兼容 / Dependencies | 基础固件/运行时、协议及已验证的 FC/FCS 范围 / Base firmware/runtime, protocol and tested FC/FCS range |
 | 安装与升级 / Install and upgrade | 初装、升级、保留/清除配置、恢复；补丁源版本 / First install, upgrade, configuration retention/reset, recovery and patch source versions |
 | 验证 / Validation | 实测设备、已测/未测项及限制 / Tested hardware, completed/pending checks and limitations |
