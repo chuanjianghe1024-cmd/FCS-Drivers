@@ -132,3 +132,10 @@ The current license is [PolyForm Noncommercial 1.0.0](LICENSE). It permits nonco
 后续官方发行包须有权按所声明条款分发，附 LICENSE.txt 和第三方许可/声明；中英发行说明与 manifest.json 使用 PolyForm-Noncommercial-1.0.0 并注明适用范围。核对私有构建来源的实际许可；公开 README 不自动重授权私有源码或第三方组件。历史包沿用各自条款，不改写既有附件。本次不创建 Release。
 
 Future official artifacts must be eligible for distribution under the stated terms and include LICENSE.txt and third-party licenses/notices. Bilingual release notes and manifest.json use PolyForm-Noncommercial-1.0.0 and state scope. Verify the actual private build-source license; this README does not automatically relicense private sources or third-party components. Historical packages retain their terms and assets remain unchanged. This change creates no release.
+
+
+## Gateway OPC UA 预览状态 / OPC UA preview status
+
+Gateway 的 OPC UA 适配器已进入开发预览（[实现与说明](https://github.com/chuanjianghe1024-cmd/FluentControl/blob/codex/opcua-preview/docs/fcs-opcua.md)）：可配置只读信号目录、实时变化订阅与一级网关挂载，需显式交换并信任应用证书。C3 固件协议不变；共享、云上传仍由用户主动选择。当前尚无 FCSD OPC UA 发行附件，FC 的既有安装包也不因此自动具备此功能。开发构建和 CI 不等于真实 C3、Windows USB、NAS/Pi 已完成验收。
+
+The optional Gateway OPC UA adapter is in development preview: explicit read-only signals, change subscriptions and one-hop mounts with certificate trust. C3 firmware remains unchanged, and sharing/cloud upload stay opt-in. FCSD has no OPC UA release asset yet, and existing FC installers do not gain the feature automatically. Development builds and CI do not establish physical C3, Windows USB or NAS/Pi acceptance. See the linked implementation guide for setup and current limits.
