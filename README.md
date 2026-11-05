@@ -148,3 +148,12 @@ Gateway 开发分支已加入只读 CAN/SocketCAN、ROS 2 指定话题接入与 
 当前属于开发预览，FCSD 尚无对应发行附件；既有 FC 安装包不会自动新增这些功能。自动化软件测试与实体 CAN/机器人、C3、NAS/Pi 验收分别记录；没有 CAN 发送、通用总线解锁、车辆/机器人控制或硬实时保证。
 
 The Gateway development branch adds read-only CAN/SocketCAN, explicit ROS 2 imports and FCS telemetry exports in a shared resource catalog. FC remains a subscriber and C3 firmware is unchanged. Disabled by default; hardware, message definitions, owner/vendor permission and Gateway signal grants must be prepared separately. See the guide and PR for setup and exact-commit tests. FCSD has no corresponding release assets yet; existing FC installers are unchanged. Physical acceptance is pending. No CAN transmission, universal bus unlocking or hard real-time control is provided.
+
+
+## 统一订阅与有线 ROS 2 / Shared subscriptions and Ethernet ROS 2
+
+最新开发预览将 FC、Gateway 脚本、ROS 遥测与 OPC UA 本地导出接到同一 Gateway 订阅核心，共享采集、时间和有效状态；ROS/DDS 与 OPC UA 保留独立协议适配。有线 ROS 2 通过以太网/IP 接入，CAN 继续走 SocketCAN。C3 固件及恢复方式不变。见 [PR #16](https://github.com/chuanjianghe1024-cmd/FluentControl/pull/16) 与 [部署及实测指南](https://github.com/chuanjianghe1024-cmd/FluentControl/blob/codex/gateway-subscriptions/docs/fcs-subscriptions.md)。
+
+客户端与 Gateway 需要配套预览版本，旧安装包不会自动获得新 API。软件测试包含跨两个独立容器网络节点的真实 DDS；实体网卡、网线/交换机、机器人及 FC 联动仍待验证。此仓库仍无对应正式附件，不把 CI 预览包当成已验收固件。
+
+The latest preview shares Gateway acquisition, timestamps and quality across FC, scripts, ROS telemetry and local OPC UA exports while keeping protocol adapters separate. Wired ROS uses Ethernet/IP; CAN retains SocketCAN. C3 firmware and recovery are unchanged. Match preview client/Gateway versions; existing installers do not gain the new API. Cross-container DDS tests are separate from physical NIC/cable/switch, robot and FC acceptance. No production release assets are added; see the linked PR and guide.
