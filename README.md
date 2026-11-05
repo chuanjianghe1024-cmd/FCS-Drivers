@@ -139,3 +139,12 @@ Future official artifacts must be eligible for distribution under the stated ter
 Gateway 的 OPC UA 适配器已进入开发预览（[实现与说明](https://github.com/chuanjianghe1024-cmd/FluentControl/blob/codex/opcua-preview/docs/fcs-opcua.md)）：可配置只读信号目录、实时变化订阅与一级网关挂载，需显式交换并信任应用证书。C3 固件协议不变；共享、云上传仍由用户主动选择。当前尚无 FCSD OPC UA 发行附件，FC 的既有安装包也不因此自动具备此功能。开发构建和 CI 不等于真实 C3、Windows USB、NAS/Pi 已完成验收。
 
 The optional Gateway OPC UA adapter is in development preview: explicit read-only signals, change subscriptions and one-hop mounts with certificate trust. C3 firmware remains unchanged, and sharing/cloud upload stay opt-in. FCSD has no OPC UA release asset yet, and existing FC installers do not gain the feature automatically. Development builds and CI do not establish physical C3, Windows USB or NAS/Pi acceptance. See the linked implementation guide for setup and current limits.
+
+
+## Gateway CAN / ROS 2 预览状态 / CAN and ROS 2 preview
+
+Gateway 开发分支已加入只读 CAN/SocketCAN、ROS 2 指定话题接入与 FCS 遥测输出，外部节点共用设备/传感器/信号目录。FC 继续仅订阅，C3 固件不变。配置默认禁用；使用前须准备匹配的 CAN 适配器、接线/波特率与厂商报文资料，并明确设备接入许可及 Gateway 信号授权。具体步骤和限制见 [接入指南](https://github.com/chuanjianghe1024-cmd/FluentControl/blob/codex/gateway-adapters/docs/fcs-adapters.md) 和 [PR #15](https://github.com/chuanjianghe1024-cmd/FluentControl/pull/15)。
+
+当前属于开发预览，FCSD 尚无对应发行附件；既有 FC 安装包不会自动新增这些功能。自动化软件测试与实体 CAN/机器人、C3、NAS/Pi 验收分别记录；没有 CAN 发送、通用总线解锁、车辆/机器人控制或硬实时保证。
+
+The Gateway development branch adds read-only CAN/SocketCAN, explicit ROS 2 imports and FCS telemetry exports in a shared resource catalog. FC remains a subscriber and C3 firmware is unchanged. Disabled by default; hardware, message definitions, owner/vendor permission and Gateway signal grants must be prepared separately. See the guide and PR for setup and exact-commit tests. FCSD has no corresponding release assets yet; existing FC installers are unchanged. Physical acceptance is pending. No CAN transmission, universal bus unlocking or hard real-time control is provided.
