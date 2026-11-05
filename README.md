@@ -157,3 +157,8 @@ The Gateway development branch adds read-only CAN/SocketCAN, explicit ROS 2 impo
 客户端与 Gateway 需要配套预览版本，旧安装包不会自动获得新 API。软件测试包含跨两个独立容器网络节点的真实 DDS；实体网卡、网线/交换机、机器人及 FC 联动仍待验证。此仓库仍无对应正式附件，不把 CI 预览包当成已验收固件。
 
 The latest preview shares Gateway acquisition, timestamps and quality across FC, scripts, ROS telemetry and local OPC UA exports while keeping protocol adapters separate. Wired ROS uses Ethernet/IP; CAN retains SocketCAN. C3 firmware and recovery are unchanged. Match preview client/Gateway versions; existing installers do not gain the new API. Cross-container DDS tests are separate from physical NIC/cable/switch, robot and FC acceptance. No production release assets are added; see the linked PR and guide.
+
+
+2026-11-05 预览修复：已复现并修复未知外部订阅导致 Host 停止、同源多 ROS 话题产生重复订阅，以及重叠适配器授权覆盖设备归属。新增来源失效隔离、ROS 多话题独立质量、双向授权顺序及整批越权拒绝回归；实现仍在 [PR #15](https://github.com/chuanjianghe1024-cmd/FluentControl/pull/15) / [PR #16](https://github.com/chuanjianghe1024-cmd/FluentControl/pull/16)，保持待合并，不创建发行附件。原逐信号时间戳修复保留。请以 PR 最新提交的 CI 为准；C3 固件不变，实体联调仍待验证。
+
+Preview fixes reproduce and address unknown-source Host termination, duplicate ROS selectors when one source feeds multiple topics, and overlapping adapter grants replacing device ownership. Regression tests cover isolation, independent output quality, grant ordering and atomic rejection of unauthorized batches. PRs #15/#16 remain open; no release assets or C3 firmware changes. Per-signal timestamp handling is retained; check exact-commit CI separately from physical acceptance.
